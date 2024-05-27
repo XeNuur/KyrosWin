@@ -91,7 +91,7 @@ str2wide(const std::string& string) {
 		return L"";
 
 	std::wstring result(size_needed, 0);
-	MultiByteToWideChar(CP_UTF8, 0, string.data(), (int)string.size(), result.data(), size_needed);
+	MultiByteToWideChar(CP_UTF8, 0, string.data(), (int)string.size(), &result[0], size_needed);
 	return result;
 }
 
